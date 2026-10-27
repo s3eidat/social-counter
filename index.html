@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Social Counter — Character Limits for X, Instagram, LinkedIn &amp; SMS | S3eidat Tools</title>
+<meta name="description" content="Live character counts for X (weighted, links = 23), Instagram, LinkedIn, Facebook, TikTok, YouTube, Google snippets and SMS segments (GSM-7 vs Unicode). English and Arabic. Free and private.">
+<meta property="og:title" content="Social Counter — free, private character limit checker">
+<meta property="og:description" content="X, Instagram, LinkedIn, TikTok, YouTube, Google and SMS limits as you type. Runs 100% in your browser.">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+<!--s3:seo-->
+<link rel="canonical" href="https://s3eidat.github.io/social-counter/">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0d0f12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="S3eidat Tools">
+<meta property="og:url" content="https://s3eidat.github.io/social-counter/">
+<meta property="og:image" content="https://s3eidat.github.io/social-counter/screenshot.png">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Social Counter — Character limits for X, Instagram, SMS…">
+<meta name="twitter:description" content="Character limits for X, Instagram, SMS…. Free, private and runs 100% in your browser: no sign-up, no uploads.">
+<meta name="twitter:image" content="https://s3eidat.github.io/social-counter/screenshot.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Social Counter", "url": "https://s3eidat.github.io/social-counter/", "description": "Character limits for X, Instagram, SMS…. Free, private and runs 100% in your browser: no sign-up, no uploads.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://s3eidat.github.io/social-counter/screenshot.png", "author": {"@type": "Person", "name": "s3eidat", "url": "https://github.com/s3eidat"}}</script>
+<!--/s3:seo-->
+</head>
+<body data-tool="social-counter">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Social Counter</h1>
+    <p>Write once and see how it fits everywhere: X's weighted count, Instagram's hashtag cap, YouTube and Google snippet lengths, and how many SMS parts it will cost. Emoji count the way each platform counts them.</p>
+  </section>
+
+  <div class="sc-grid">
+    <section class="card stack">
+      <div class="row between">
+        <h2>Your text</h2>
+        <div class="row">
+          <button class="btn ghost small" type="button" id="sample">Sample</button>
+          <button class="btn ghost small" type="button" id="copy"><svg class="i"><use href="#i-copy"/></svg>Copy</button>
+          <button class="btn ghost small" type="button" id="clear"><svg class="i"><use href="#i-trash"/></svg>Clear</button>
+        </div>
+      </div>
+      <label for="input" class="sr">Text</label>
+      <textarea class="textarea prose sc-input" id="input" dir="auto" placeholder="Type or paste your post, caption or message…"></textarea>
+      <div class="stats sc-stats" id="stats" aria-live="polite"></div>
+
+      <div class="sc-sms" id="sms">
+        <div class="row between">
+          <h2>SMS</h2>
+          <span class="chip" id="enc">GSM-7</span>
+        </div>
+        <div class="sc-parts" id="parts"></div>
+        <p class="faint" id="smsNote"></p>
+        <div id="nongsm" class="sc-nongsm" hidden></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <h2>Limits</h2>
+        <span class="faint">bar turns amber at 90%</span>
+      </div>
+      <ul class="sc-meters" id="meters"></ul>
+    </section>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
